@@ -1,51 +1,45 @@
-// // OBJECT DESTRUCTURING
+//
+// Object destructuring
+//
 
-// // const person = {
-// //     name: 'Hernán',
-// //     age: 52,
-// //     location: {
-// //         city: 'Playa del Carmen', 
-// //         temp: 32
-// //     }
-// // };
+// const person = {
+//   name: 'Andrew',
+//   age: 27,
+//   location: {
+//     city: 'Philadelphia',
+//     temp: 88
+//   }
+// };
 
-// // const name = 'Hernán';
-// // const age = 52;
+// const { name: firstName = 'Anonymous', age } = person;
+// console.log(`${firstName} is ${age}.`);
 
-
-// // console.log( `${name} is ${age},` );
+// const { city, temp: temperature } = person.location;
+// if (city && temperature) {
+//   console.log(`It's ${temperature} in ${city}.`);
+// }
 
 // const book = {
-//     name: 'La Cábala Mística',
-//     author: 'Dion Fortune',
-//     publisher: {
-//         name: 'Golden Dawn'
-//     }
+//   title: 'Ego is the Enemy',
+//   author: 'Ryan Holiday',
+//   publisher: {
+//     // name: 'Penguin'
+//   }
 // };
 
 // const { name: publisherName = 'Self-Published' } = book.publisher;
 
-// const { name: bookName } = book;
+// console.log(publisherName); // Penguin, Self-Published
 
+//
+// Array destructuring
+//
 
-// if (publisherName) {
-//     console.log(publisherName, bookName );
-// };
+// const address = ['1299 S Juniper Street', 'Philadelphia', 'Pennsylvania', '19147'];
+// const [, city, state = 'New York'] = address;
+// console.log(`You are in ${city} ${state}.`);
 
+const item = ['Coffee (iced)', '$3.00', '$3.50', '$3.75'];
+const [itemName, , mediumPrice] = item;
 
-
-// // ARRAY DESTRUCTURING
-
-const address = [ 'Calle 1 Sur con Diagonal 60', 'Playa del Carmen', 'Quintana Roo', '98100' ];
-
-const [ street, city, state, zip  ] = address
-
-console.log(`You are in ${city}, ${state}.`)
-
-
-
-const item = [ 'Coffee (hot)', '52,00', '65,50', '75,00' ];
-
-const [ product, , price] = item
-
-console.log(`A medium ${product} costs ${price}.`);
+console.log(`A medium ${itemName} costs ${mediumPrice}`);
