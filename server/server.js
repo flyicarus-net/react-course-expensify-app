@@ -11,5 +11,6 @@ app.get('*', (req, res) => {
 });
 
 app.listen (port, () => {
-    console.log('app is running on port ${ PORT }')
+    console.log('app is running')
 });
+
