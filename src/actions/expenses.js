@@ -47,7 +47,7 @@ export const setExpenses = (expenses) => ({
 });
 
 
-export const startSetExpense = () => {
+export const startSetExpenses = () => {
   return (dispatch) => {
     return database().ref('expenses').once(vslue).then((snapshot) => {
         const expenses = [];
